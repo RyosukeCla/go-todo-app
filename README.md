@@ -25,4 +25,5 @@ $ sh ./scripts/dev.sh
 ### build
 ```bash
 $ sh ./scripts/build.sh
+$ ./go-todo-app
 ```
