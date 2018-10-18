@@ -11,7 +11,7 @@ func tasks(p *do.Project) {
 
 	p.Task("dev", nil, func(c *do.Context) {
 		c.Run("go build", do.M{"$in": "."})
-		c.Start("./go-todo-app")
+		c.Start("./go-todo-app", do.M{"$in": "."})
 	}).Src("*.go", "**/*.go").Debounce(1000)
 }
 
