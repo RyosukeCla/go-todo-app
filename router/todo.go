@@ -59,6 +59,7 @@ func checkTodo(w http.ResponseWriter, r *http.Request) {
 	}
 
 	todo.Checked = !todo.Checked
+	todo.UpdatedAt = time.Now()
 
 	if err := client.Write("todos", todo.Id, todo); err != nil {
 		panic(err)
