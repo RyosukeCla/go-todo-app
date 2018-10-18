@@ -1,9 +1,11 @@
 # Go todo app
-simple todo app for learning go
+simple todo app for learning go.
+no design, just it.
 
 ## stack
-- go 1.11.1
 - react 16.5.2
+- go 1.11.1
+- scribble: a tiny golang json db
 
 ## start server
 ### mac: prebuild binary
@@ -18,7 +20,8 @@ $ sh ./scripts/install.sh
 
 ### dev
 ```bash
-$ sh ./scripts/dev.sh
+$ godo dev --watch
+$ cd ./client; npm run dev
 # go to localhost:3000
 ```
 
