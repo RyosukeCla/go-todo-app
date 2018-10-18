@@ -3,8 +3,11 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
+	"path/filepath"
 	"time"
 
+	"github.com/RyosukeCla/go-todo-app/db"
 	"github.com/RyosukeCla/go-todo-app/router"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
@@ -20,6 +23,10 @@ func main() {
 	r.Use(middleware.Recoverer)
 
 	r.Use(middleware.Timeout(60 * time.Second))
+
+	workDir, _ := os.Getwd()
+	dataDir := filepath.Join(workDir, "./data")
+	db.SetScribble(dataDir, nil)
 
 	// Api
 	r.Route("/api", func(r chi.Router) {
